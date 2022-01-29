@@ -4,8 +4,6 @@ services:
 
   krst-dev-db:
     container_name: krst-dev-db
-    networks:
-      - web-network
     image: postgres:12.7
     restart: always
     environment:
