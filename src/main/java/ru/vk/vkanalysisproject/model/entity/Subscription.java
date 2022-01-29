@@ -23,6 +23,18 @@ public class Subscription {
     @Enumerated(EnumType.STRING)
     private Type type;
 
+    @ManyToOne(cascade = {CascadeType.ALL}, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public enum Type{ //Todo правильно наименовать
         FIND_MESSGES_BY_MAKET,ANALYS_FRIENDS_TOWNS,FIND_SHADOW_PAGES
     }

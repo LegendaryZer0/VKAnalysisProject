@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class VKController {
 
     @GetMapping("/shadow-pages")
-    @PreAuthorize("@rights.hasAccessToService(#userId)")
+    @PreAuthorize("@rights.hasAccessToFeature(#userId,\"FIND_SHADOW_PAGES\")")
     public ResponseEntity<?> getShadowPages(Long userId){
-
+        //todo сервис вызова функции
+        return ResponseEntity.ok("200");
     }
 }
