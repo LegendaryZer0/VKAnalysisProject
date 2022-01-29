@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+
+  krst-dev-db:
+    container_name: krst-dev-db
+    networks:
+      - web-network
+    image: postgres:12.7
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=db
+    command: ["--autovacuum=off"]
+    ports:
+      - "127.0.0.12:5432:5432"
+
