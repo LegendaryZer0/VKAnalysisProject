@@ -5,7 +5,12 @@ server:
       deep: 5
 spring:
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_DATABASE:someDb}?ApplicationName=krst-projects&sslmode=${DB_SSL_MODE:disable}&prepareThreshold=0
+    url: jdbc:postgresql://${DB_HOST:127.0.0.12}:${DB_PORT:5434}/${DB_DATABASE:devDB}?ApplicationName=krst-projects&sslmode=${DB_SSL_MODE:disable}&prepareThreshold=0
     username: ${DB_USERNAME:qwerty007}
     password: ${DB_PASSWORD:qwerty007}
     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+

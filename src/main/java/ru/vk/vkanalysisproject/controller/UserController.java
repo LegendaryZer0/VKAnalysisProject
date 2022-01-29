@@ -26,6 +26,6 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<?> addUserSubscription(@RequestParam Long userId, @RequestBody UserSubscriptionDTO userSubscriptionDTO){
-
+        return ResponseEntity.ok(userService.addSubscription(userId,userSubscriptionDTO));
     }
 }

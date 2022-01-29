@@ -24,7 +24,7 @@ public class Subscription {
     private Type type;
 
     @ManyToOne(cascade = {CascadeType.ALL}, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "account_id", nullable = false)
     private User user;
 
     public User getUser() {

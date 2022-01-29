@@ -41,11 +41,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User addSubscription(Long userId,UserSubscriptionDTO userSubscriptionDTO) {
-        findOrThrow(userId).getSubscriptions()
+        User user = findOrThrow(userId);
+        user.getSubscriptions()
                 .add(Subscription
                         .builder()
                         .subscriptionStartDate(Timestamp.from(Instant.now()))
-                        .
-                        .build())
+                        .subscriptionEndDate(userSubscriptionDTO.getEndDate())
+                        .type(Subscription.Type.valueOf(userSubscriptionDTO.getSubscriptionType()))
+                        .build());
+       return userRepository.save(user);
     }
 }
